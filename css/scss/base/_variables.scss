@@ -1,0 +1,18 @@
+$orange: #F9690E;
+$gold: #E87E04;
+$madison: #2c3e50;
+
+$interactive-color: $gold;
+$active-color: $orange;
+
+$primary-color: #6B1E00;
+$secondary-color: $madison;
+$tertiary-color:  mix($active-color, white, 10);
+
+$butler-color: #ccc;
+$bg-color: #fdfdfd;
+
+
+$text-font-stack: 'Alegreya', 'Charter', 'Georgia', serif;
+$interface-font-stack:  'Roboto', 'Roboto', 'PT Sans', 'Helvetica', sans-serif;
+$mono-font-stack: monospace;

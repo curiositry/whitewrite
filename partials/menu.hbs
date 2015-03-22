@@ -1,0 +1,30 @@
+{{!
+  THE MENU: Enabling this partial creates a hamburger icon that opens a menu.
+  It’s responsive, lightweight, and works with javascript disabled.
+}}
+
+{{! Trigger element, which is hidden }}
+
+{{! 
+  This label which control the trigger. The hamburger icon is a background
+  image in the CSS (base64 encoded svg) in main.css. Hover and close states
+  in defer.css
+}}
+<!-- <a href="#" class="open-menu__icon nav-toggle" id="open-menu">
+  <span class="hidden">Open Menu</span>
+</a> -->
+
+{{! The menu that slides in. Styles in defer.css }}
+<nav class="menu nav-collapse" id="menu" role="navigation">
+  <ul>
+    {{>navigation}}
+    
+    <li class="nav-rss" style="">
+      <a href="{{@blog.url}}/rss">
+        <i class="fa fa-rss" style="color:orange"></i>
+        <span hidden>Subscribe with RSS</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+

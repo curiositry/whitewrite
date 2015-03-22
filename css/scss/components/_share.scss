@@ -1,0 +1,29 @@
+.share {
+  text-align: center;
+}
+
+.share .fa-inverse {
+  position: relative;
+  bottom: 1rem;
+  color: $interactive-color;
+  &:hover {
+    color: $active-color;;
+  }
+}
+
+.share .fa-square-o {
+  color: $tertiary-color;
+}
+
+.fa-stack:hover .fa-twitter {
+  color: #4099FF;
+}
+
+.fa-stack:hover .fa-facebook {
+  color: #3a5795;
+}
+
+.fa-stack:hover .fa-google-plus {
+  color: #dd4b39;
+}
+

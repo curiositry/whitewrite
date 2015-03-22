@@ -1,0 +1,42 @@
+blockquote {
+  margin: 1.5rem 0 1.5rem -1.5rem;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  display: block;
+}
+
+blockquote:before {
+  content: "\201C"; 
+  float: left;
+  position: relative;
+  bottom: .5rem;
+  line-height: 1;
+  left: 1.5rem;
+  color: $tertiary-color;
+  font-size: 5.966rem;
+  z-index: -1;
+}
+
+blockquote p {
+  margin: 1.5rem 0 0 1rem;
+  padding: 0 2rem;
+  text-indent: 0;
+  margin-top: 1.5rem;
+  // font-style: italic;
+  font-family: $text-font-stack;
+}
+
+blockquote small {
+  display: inline-block;
+  margin: 0.8rem 0 0.8em 1.65rem;
+  font-size:.825rem;
+  color: #CCC;
+}
+
+blockquote small:before { content: "\2014 \00A0"; }
+
+blockquote cite {
+  font-weight: 700;
+}
+
+blockquote cite a { font-weight: normal; }

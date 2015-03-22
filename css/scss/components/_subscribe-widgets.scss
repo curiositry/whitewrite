@@ -1,0 +1,86 @@
+.subscribe-widget h2, .subscribe-widget h3 {
+  margin-top: 0;
+  font-weight: 900;
+}
+
+.subscribe-widget form {
+  @include flexbox();
+}
+
+.subscribe-widget input[type='email'] {
+  @include flex(3);
+}
+
+.subscribe-widget button[type='submit'] {  
+  @include flex(1);
+  max-width:10rem;
+  min-width:9rem;
+}
+
+.subscribe-widget--box .fa-envelope {
+  color: white;
+  float: left;
+  padding-right: 1.5rem;
+  margin-top: -0.5rem;
+  opacity: .3;
+}
+
+
+
+
+
+.subscribe-widget--box {
+  color: $tertiary-color;
+  background-color: $secondary-color;
+  padding: 2rem;
+  border: 2px solid $butler-color;
+}
+
+.subscribe-widget--box h2 {
+  color: $tertiary-color;
+}
+
+.subscribe-widget--box input[type='email'] {
+  border: 6px solid $tertiary-color;
+  color: $secondary-color;
+}
+
+.subscribe-widget--box button[type='submit'] {  
+  font-family: $interface-font-stack;
+}
+
+.subscribe-widget--box button[type='submit'] i {
+  color: white;
+  opacity: .5;
+}
+
+
+
+
+.subscribe-widget--bar h3 {
+  font-family: $text-font-stack;
+  font-style: italic;
+  color: $butler-color;
+  text-align: center
+}
+
+.subscribe-widget--bar {
+  padding: 2rem 0;
+  // border: 2px solid $interactive-color;
+}
+
+.subscribe-widget input[type='email'] {
+  // border: 3px solid $tertiary-color;
+  font-family: $interface-font-stack;
+}
+
+.subscribe-widget button[type='submit'] {  
+  // border: none;
+  @include breakpoint(lg) {
+    padding: 0.93rem;
+    
+  }
+  font-family: $interface-font-stack;
+  box-shadow: none;
+  line-height: 1;
+}

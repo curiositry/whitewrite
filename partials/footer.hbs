@@ -1,0 +1,44 @@
+<footer class="site-footer">
+  
+  {{! Uncomment if you want a copy of your navigation in the footer. 
+      It gives your visitors something to do when
+      they finish an article other than commenting, sharing, or closing
+      the tab.       
+  }}
+  {{#if @blog.navigation}}
+  <nav class="site-footer__navigation" role="navigation">
+    <ul>
+      {{>navigation}}
+    </ul>
+  </nav>
+  {{/if}}
+  
+  <section class="site-footer__attribution">
+    
+    <span class="site-footer__attribution--copyright">
+      &copy; {{date format="YYYY"}}
+      <a href="{{@blog.url}}/">{{@blog.title}}</a>
+    </span>
+    
+    <span class="meta-spacer"></span>
+
+    <span class="site-footer__attribution--theme-author">
+      <a href="http://github.com/omphalosskeptic/mnml-ghost-theme">mnml</a>
+      theme by
+      <a href="http://omphalosskeptic.github.io">omphalosskeptic</a>
+    </span>
+    
+    <span class="meta-spacer"></span>
+
+    <span class="site-footer__attribution--ghost">
+      Proudly published with
+      <a href="https://ghost.org">
+        <img src="{{asset "img/ghost-icon.svg"}}" alt="" />
+        {{! For search engines / edge cases }}
+        <span class="hidden"> Ghost</span>
+      </a>
+    </span>
+    
+  </section>
+  
+</footer>

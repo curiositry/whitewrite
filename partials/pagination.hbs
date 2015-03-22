@@ -1,0 +1,22 @@
+<nav class="pagination center-text sans-serif butler-color" role="navigation">
+
+  {{#if prev}}
+    <a class="newer-posts" href="{{page_url prev}}">
+    <i class="fa fa-caret-left"></i> 
+  {{/if}}
+  Newer Posts
+  {{#if prev}}</a>{{/if}}
+  <span class="meta-spacer"></span> 
+  
+  <span class="page-number">Page {{page}} of {{pages}}</span>
+
+  <span class="meta-spacer"></span> 
+  {{#if next}}
+    <a class="older-posts" href="{{page_url next}}">
+  {{/if}}
+    Older Posts
+  {{#if next}} <i class="fa fa-caret-right"></i></a>{{/if}}
+  
+  
+
+</nav>

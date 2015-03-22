@@ -1,0 +1,102 @@
+
+
+
+body{
+  font-family: $interface-font-stack;
+  @include breakpoint(lg) {
+    font-size: 21px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $interface-font-stack;
+  font-weight: 900;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+h1, .typgr8-alpha {
+  @include breakpoint(mbl) {
+    font-size: 1.563rem;
+  }
+}
+
+h1, .typgr8-beta {
+  @include breakpoint(mbl) {
+    font-size: 1.954rem;
+  }
+}
+
+p, 
+.content, 
+.content li {
+  font-family: $text-font-stack;
+}
+
+footer, 
+aside {
+  font-family: $interface-font-stack;
+}
+
+.post-teaser__meta,
+.site-footer__attribution,
+.post__meta {
+  font-family: $interface-font-stack;
+  font-weight: 700;
+  transition: color, .5s;
+  font-size: 1rem;
+  &:hover {
+    color: shade($butler-color, 75);
+    transition: color, .5s;
+  }
+  & a {
+    color: tint($interactive-color, 50);
+    border-bottom: none;
+  }
+}
+
+.site-footer__attribution {
+  @include breakpoint(lg) {
+   font-size: 1.25rem;
+  }
+}
+
+
+
+// ================================================ //
+//
+// # Traditional Paragraphing
+//
+// These styles set up book style paragraphing, and make the spacing work.
+// Unfortunatly, you can’t use p + p with inline elements (like thumbanils).
+//
+// Comment this block out if you want your paragraphs marked by space rather
+// than indent. 
+//
+// ================================================ //
+
+// .post-content > p + p,
+// .post-content .thumb + p,
+// .post-content aside + p{
+//   text-indent:1.65em;
+// }
+// 
+// .post-content p{
+//   margin-bottom:0em;
+//   -webkit-margin-after: 0em;
+// }
+// 
+// 
+// .post-content > h1,
+// .post-content > h2,
+// .post-content > h3{
+//   margin-top: 2.857rem;
+//   margin-bottom: 1.65rem;
+// }
+// 
+// .post-content > h4,
+// .post-content > h5,
+// .post-content > h5{
+//   margin-top: 3.3rem;
+//   margin-bottom: 1.1rem;
+// }

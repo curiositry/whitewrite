@@ -1,0 +1,28 @@
+<header class="main-header" id="main-header">
+  
+    {{#if @blog.logo}}
+      <div class="main-header__logo">
+        <a href="{{@blog.url}}" class="unstyled-anchor">
+          <img src="{{@blog.logo}}" alt="{{@blog.title}} Logo" />
+        </a>
+      </div>
+    {{/if}}
+  
+    <div class="main-header__text-container">
+      <h1 class="main-header__blog-title typgr8-beta">
+        <a class="unstyled-anchor" href="{{@blog.url}}">{{@blog.title}}</a>
+      </h1> 
+      <h3 class="main-header__blog-description typgr8-epsilon">{{@blog.description}}</h3>
+    </div>
+  </div>
+  
+  <div class="main-header__menu-container">
+    {{! 
+      This generates a handsome modal menu and hamburger icon. If you want 
+      to use it, edit menu.hbs and add your links (line ~146), then remove 
+      the ! from this helper to activate it.
+    }}
+    {{>menu}}
+  </div>
+  
+</header>

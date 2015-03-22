@@ -1,0 +1,104 @@
+{{! Previous/next page links - only displayed on page 2+ }}
+
+{{#if pagination.prev}}
+  <div class="page-number center-text m0a sans-serif butler-color">
+    Page <strong>{{pagination.page}}</strong> of 
+    <strong>{{pagination.pages}}</strong>
+  </div>
+{{/if}}
+
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+
+{{#if @last}}
+  {{>subscribe-bar}}
+{{/if}}
+
+<article class="post-teaser {{post_class}}">
+  
+  {{#has tag="note"}}<div class="post-teaser__thumbnail" id="{{title}}-post-thumbnail"></div>{{else}}
+  <!-- I want to use unless for tidyness, but it breaks for unknown reasons -->
+  {{! If has note tag, only output the title (short posts)}}
+    
+    <div class="post-teaser__thumbnail" id="{{title}}-post-thumbnail">
+      {{#if image}}
+      <script type="text/javascript">
+        var mq = window.matchMedia( "(min-width: 500px)" );
+        if (mq.matches){
+          var thumbnailContainer = document.getElementById('{{title}}-post-thumbnail');
+
+          if (!String.prototype.contains) {
+            String.prototype.contains = function(s) {
+              return this.indexOf(s) > -1;
+            }
+          };
+
+          function homepagePostThumbnail (imgUrl) {
+              {{! conditionals so it works with internal *and* external imgs }}
+              if (!imgUrl.contains("http://") && !imgUrl.contains("https://")) {
+                fireSizeUrl = "http://firesize.com/x200/g_center/{{@blog.url}}";
+              } 
+              else fireSizeUrl = "http://firesize.com/x200/g_center/";
+              
+              thumbnailContainer.innerHTML = '<img src="'+fireSizeUrl+imgUrl+'" alt="{{title}}" />';
+          };
+          
+          homepagePostThumbnail("{{image}}");
+        }; //end mediaquery if
+      </script>
+      {{/if}}
+    </div>
+  
+  {{/has}}
+  
+  
+  <div class="post-teaser__text-container">
+      
+    <header class="post-teaser__header">
+      <h2 class="post-teaser__title typgr8-beta">
+        <a class="unstyled-anchor" href="{{url}}">
+          {{title}}{{#has tag="note"}}→{{/has}}
+        </a>
+      </h2>
+    </header>
+    
+    {{#has tag="note"}}{{else}}
+    {{! I want to use unless for tidyness, but it breaks for unknown reasons }}
+    {{! If has note tag, only output the title (short posts)}}
+
+    <div class="post-teaser__excerpt">
+      <p>
+        {{excerpt words="33"}}
+        <span class="read-more">…
+          <a class="read-more__link" href="{{url}}"> 
+            <span>&raquo;</span> 
+          </a>
+        </span>
+      </p>
+    </div>
+    
+    <footer class="post-teaser__meta">
+      By {{author}}
+      <span class="meta-spacer"></span>
+      
+      <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
+        {{date format="DD MMM YYYY"}}
+      </time>
+      {{#if tags}}
+        <span class="meta-spacer"></span>
+        {{tags}}
+      {{/if}}
+    </footer>
+    {{/has}}
+    <hr class="plain-hr" style="visibility:hidden;">
+    
+  </div>
+  
+</article>
+
+{{/foreach}}
+
+
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}<br clear="all"><br>

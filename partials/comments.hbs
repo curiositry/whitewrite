@@ -1,0 +1,57 @@
+<section class="disqus-comments center-text">
+  
+  <a href="{{url}}#disqus_thread"
+     class="disqus-comments__show-comments-button btn btn--full-width" 
+     id="show-comments" 
+     onclick="loadComments();">
+    Load Comments
+  </a>
+    
+
+  {{! The empty element required for Disqus to loads comments into }}
+  <div id="disqus_thread"></div>
+  
+  <noscript>
+    Please enable JavaScript to view the 
+    <a rel="nofollow" href="http://disqus.com/?ref_noscript">
+      comments powered by Disqus.
+    </a>
+  </noscript>
+  
+  <a rel="nofollow" href="http://disqus.com" class="dsq-brlink">
+    <small><em>Comments powered by <span class="logo-disqus">Disqus</span></em></small>
+  </a>
+
+  <script type="text/javascript">
+
+    // EDIT THIS LINE!
+    var disqus_shortname = 'theautodidacts'; 
+    // You *must* replace the above with your shortname.
+
+    // variables
+    var disqus_identifier = '{{uuid}}';
+    var headTag = document.getElementsByTagName('HEAD')[0];
+    var bodyTag = document.getElementsByTagName('HEAD')[0];
+    
+    // loads disqus comments asynchronously
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (headTag || bodyTag).appendChild(s);
+    }());
+
+    function loadComments() {
+      (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (headTag || bodyTag).appendChild(dsq);
+      })();
+      document.getElementById('show-comments').style.display = "none";
+    }
+    
+  </script>
+  
+</section>
